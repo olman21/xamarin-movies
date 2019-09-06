@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:converters="clr-namespace:Xamarin.Movies.Converters"
+             xmlns:triggers="clr-namespace:Xamarin.Movies.Triggers"
+             xmlns:views="clr-namespace:Xamarin.Movies.Views"
+             x:Class="Xamarin.Movies.Views.SearchMoviePage"
+             BindingContext="{Binding SearchMovieViewModel, Source={StaticResource viewModelLocator}}"
+             Title="Xamarin Movies">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:MovieDbImageConverter x:Key="movieDbImageConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    <!--<ContentPage.ToolbarItems>
+        <ToolbarItem Text="Filter" Clicked="AddItem_Clicked">
+            <ToolbarItem.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="UWP" Value="add.png"/>
+                </OnPlatform>
+            </ToolbarItem.Icon>
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>-->
+    <StackLayout x:Name="container">
+        <StackLayout BackgroundColor="#222222" HorizontalOptions="Start" VerticalOptions="Start" Padding="20, 0, 20, 20">
+            <SearchBar Placeholder="Search Movie..."  BackgroundColor="#FFF" HeightRequest="35"  />
+        </StackLayout>
+        <ListView ItemsSource="{Binding Movies}"
+                  HasUnevenRows="True">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Padding="10,0,10,15">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="45" />
+                                    <RowDefinition Height="30" />
+                                    <RowDefinition Height="2*" />
+                                </Grid.RowDefinitions>
+                                <Image Source="{Binding BackdropPath, Converter={StaticResource movieDbImageConverter}}"
+                                   Aspect="AspectFill"
+                                   HeightRequest="160"
+                                   Grid.Row="0"/>
+                                <BoxView VerticalOptions="End" Color="#000" Opacity="0.4" HeightRequest="{Binding Source={x:Reference title}, Path=Height}"/>
+                                <StackLayout Grid.Row="0" x:Name="title" VerticalOptions="End" Padding="12, 10">
+                                    <Label Text="{Binding Title}" TextColor="#FFF" FontAttributes="Bold" FontSize="Title" Style="{StaticResource LabelHelveticaNeueMed}" />
+                                </StackLayout>
+                                <StackLayout Grid.Row="1" Orientation="Horizontal" Padding="0, 10">
+                                    <Frame CornerRadius="15"
+                                                BackgroundColor="#666"
+                                                Padding="10, 3"
+                                                HasShadow="False"
+                                                HorizontalOptions="Start">
+                                        <StackLayout Orientation="Horizontal">
+                                            <Image Source="star.png" />
+                                            <Label Text="{Binding VoteAverage, StringFormat='Rating: {0}'}" BackgroundColor="Transparent" TextColor="#FFF" />
+                                        </StackLayout>
+                                    </Frame>
+                                    <Label Text="{Binding ReleaseDate, StringFormat='{0:Y}'}" HorizontalOptions="EndAndExpand" />
+                                </StackLayout>
+                                <Label Text="Plot:" Grid.Row="2" FontAttributes="Bold" FontSize="Subtitle" />
+                                <Label Grid.Row="3" Text="{Binding Overview}" FontSize="Body"  Style="{StaticResource LabelHelveticaNeueLt}"/>
+                            </Grid>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <StackLayout Orientation="Horizontal" BackgroundColor="#ccc" VerticalOptions="End"  IsVisible="{Binding IsBusy}" Padding="12" >
+            <ActivityIndicator IsRunning="{Binding IsBusy}" />
+            <Label Text="Loading..." VerticalOptions="Center" FontSize="Medium" Style="{StaticResource LabelHelveticaNeueMedium}" />
+        </StackLayout>
+    </StackLayout>
+</ContentPage>

@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:views="clr-namespace:Xamarin.Movies.Views"
+             xmlns:ioc="clr-namespace:Xamarin.Movies.IoC"
+             x:Class="Xamarin.Movies.App">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ioc:ViewModelLocator x:Key="viewModelLocator" />
+            <x:String x:Key="MovieDbBaseUrl">https://api.themoviedb.org/3</x:String>
+            <x:String x:Key="MovieDbApiKey">e9f45bb4c778ef912301c2e68c858e08</x:String>
+            <x:String x:Key="MovieDbImageBaseUrl">https://image.tmdb.org/t/p/w500</x:String>
+            
+            <!--Fonts Android-->
+            <x:String x:Key="HelveticaNeue">HelveticaNeue.ttf#HelveticaNeue</x:String>
+            <x:String x:Key="HelveticaNeuelt">HelveticaNeuelt.ttf#HelveticaNeuelt</x:String>
+            <x:String x:Key="HelveticaNeueHv">HelveticaNeueHv.ttf#HelveticaNeueHv</x:String>
+            <x:String x:Key="HelveticaNeueBd">HelveticaNeueBd.ttf#HelveticaNeueBd</x:String>
+            <x:String x:Key="HelveticaNeueBlackCond">HelveticaNeue-BlackCond.ttf#HelveticaNeue-BlackCond</x:String>
+            <x:String x:Key="HelveticaNeueLight">HelveticaNeue-Light.ttf#HelveticaNeue-Light</x:String>
+            <x:String x:Key="HelveticaNeueThin">HelveticaNeue-Thin.ttf#HelveticaNeue-Thin</x:String>
+            <x:String x:Key="HelveticaNeueBold">HelveticaNeue-Bold.ttf#HelveticaNeue-Bold</x:String>
+
+            <OnPlatform x:TypeArguments="x:String" Android="HelveticaNeueMed.ttf#HelveticaNeueMed" iOS="HelveticaNeue" x:Key="HelveticaNeueMed" />
+            <OnPlatform x:TypeArguments="x:String" Android="HelveticaNeueLt.ttf#HelveticaNeueLt" iOS="HelveticaNeue" x:Key="HelveticaNeueLt" />
+            <OnPlatform x:TypeArguments="x:String" Android="HelveticaNeue-Medium.ttf#HelveticaNeue-Medium" iOS="HelveticaNeue" x:Key="HelveticaNeueMedium" />
+
+            HelveticaNeueMedium
+
+
+            <Style x:Key="LabelHelveticaNeueMed" TargetType="Label">
+                <Setter Property="FontFamily" Value="{StaticResource HelveticaNeueMed}" />
+            </Style>
+            <Style x:Key="LabelHelveticaNeueLt" TargetType="Label">
+                <Setter Property="FontFamily" Value="{StaticResource HelveticaNeueLt}" />
+            </Style>
+            <Style x:Key="LabelHelveticaNeueMedium" TargetType="Label">
+                <Setter Property="FontFamily" Value="{StaticResource HelveticaNeueMedium}" />
+            </Style>
+
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
