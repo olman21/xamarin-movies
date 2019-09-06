@@ -8,7 +8,7 @@
         <ResourceDictionary>
             <ioc:ViewModelLocator x:Key="viewModelLocator" />
             <x:String x:Key="MovieDbBaseUrl">https://api.themoviedb.org/3</x:String>
-            <x:String x:Key="MovieDbApiKey">e9f45bb4c778ef912301c2e68c858e08</x:String>
+            <x:String x:Key="MovieDbApiKey">API-KEY</x:String>
             <x:String x:Key="MovieDbImageBaseUrl">https://image.tmdb.org/t/p/w500</x:String>
             
             <!--Fonts Android-->
