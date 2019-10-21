@@ -19,8 +19,10 @@ namespace Xamarin.Movies.Converters
         {
             var imageName = value as string;
             if (imageName == null) return string.Empty;
-
-            return ImageSource.FromUri(new Uri($"{internalSettings.MovieDbImageBaseUrl}/{imageName}"));
+            var uri = new Uri($"{internalSettings.MovieDbImageBaseUrl}{imageName}");
+            var image= ImageSource.FromUri(uri);
+            
+            return image;
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
