@@ -1,13 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.705
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29411.108
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xamarin.Movies.Android", "Xamarin.Movies\Xamarin.Movies.Android\Xamarin.Movies.Android.csproj", "{1FB04F38-7B44-423C-A137-654B78BCB904}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xamarin.Movies.iOS", "Xamarin.Movies\Xamarin.Movies.iOS\Xamarin.Movies.iOS.csproj", "{C791D161-3079-4C3E-9103-BCAB89BD525B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xamarin.Movies", "Xamarin.Movies\Xamarin.Movies\Xamarin.Movies.csproj", "{24CD4C63-0E7B-4B6E-9019-569F36265601}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Xamarin.Movies", "Xamarin.Movies\Xamarin.Movies\Xamarin.Movies.csproj", "{24CD4C63-0E7B-4B6E-9019-569F36265601}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
